@@ -41,3 +41,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 add_executable(testing ${SOURCE_FILES})
 add_dependencies(testing gtest)
 target_link_libraries(testing gtest ${CMAKE_THREAD_LIBS_INIT})
+
+# Suppress specific warning for GoogleTest (was not compiling due to a warning)
+if (CMAKE_COMPILER_IS_GNUCXX)
+    set_target_properties(gtest PROPERTIES COMPILE_FLAGS "-Wno-error=maybe-uninitialized")
+endif()
