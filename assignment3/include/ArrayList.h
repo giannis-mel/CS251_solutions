@@ -155,6 +155,11 @@ public:
      */
     void swap(ArrayList<T> &src) noexcept;
 private:
+    /*
+     * Private array resizing function used when adding elements to the array
+    */
+    void resize_array();
+    
     /**
      * Wrapper around our physical buffer.
      */

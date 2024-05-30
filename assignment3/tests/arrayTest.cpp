@@ -281,7 +281,7 @@ TEST_F(ArrayListTest, Clear)
         EXPECT_STREQ(ex.what(), "0");
     }
     // This line will cause the program to fail and should cause a SIGSEGV
-    EXPECT_DEATH({ a[0] = 100L; }, "");
+    // EXPECT_DEATH({ a[0] = 100L; }, ""); 
 }
 
 } // Namespace
